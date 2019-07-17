@@ -1,0 +1,3222 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/4/2019 4:03:12 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CLESQL02"
+  DTS:CreatorName="NA\cle1159"
+  DTS:Description="Enhanced Cash Receipts - WTR 2.176"
+  DTS:DTSID="{BBF396AD-69A6-46D5-9BED-7FC9A4609A27}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="1033"
+  DTS:MaxConcurrentExecutables="1"
+  DTS:ObjectName="rp_R1017"
+  DTS:PackagePriorityClass="2"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="83"
+  DTS:VersionGUID="{0F747827-8FB5-4F39-ADF4-66D3DADB9B24}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel-WINTRAC]"
+      DTS:CreationName="EXCEL"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{5C972E02-5EC9-488C-B36D-58697AAB1A6C}"
+      DTS:ObjectName="Excel-WINTRAC">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\DTSINI\R1017-Template.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{D63FE1ED-8BB9-440D-B477-691CA34A991C}"
+      DTS:ObjectName="ExecutionUserParam"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">test1</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{1695BD39-8581-4ACF-8760-A3C880D2F379}"
+      DTS:ObjectName="NTUserParam"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">bmr3633</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{F2D8F392-C6D3-4068-8F57-C8C82DD7082C}"
+      DTS:ObjectName="RestrictionParams"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">'2017-01-15 00:00:00.000', '2017-01-15 00:00:00.000', 0, 0, 0, 0, 0</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6C88B0B1-FA8E-4861-8DC4-41A0F40301D4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="BankAccountID"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="8">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{984D54AB-13E6-4B18-B5C6-D3FE1DA1ABDD}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="BillingTypeID"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="8">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{87F023F5-B6BA-400D-9C59-54AC107DB270}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ClientID"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="8">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AD3BE8AA-C114-4300-8FAB-A9B7E7E5F4FB}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DateType"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="8">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0853D6A8-0322-46CE-8666-96CCE5D2A97B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ExecutionUser_del"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="8">test</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6C171C1D-4F49-427A-921A-E4E8DE9B0634}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FromDate"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="8">7/01/2007</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B9D9599A-425C-46D9-AE18-9DAB4D51483B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="GDTSFilePath"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\WintracOutputs\Reports\R1017\R1017-09-19-2011-test.XLSX</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6AF840FF-DB0D-4A0F-B98C-D89A75940160}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="GDTSYesterday"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="8">09-19-2011</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D9D9FC08-D733-41B8-9F62-BE3F5EA83032}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="OutputFileRootDirectory"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\WintracOutputs\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{36B557EC-CF40-4632-87CF-FED69F63D164}"
+      DTS:Expression="@[$Package::NTUserParam]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="RestrictionNTUserID_del"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6368021D-6D6C-4A4A-8CBE-907F86B02760}"
+      DTS:Expression="@[$Package::RestrictionParams]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="RestrictionParameters_del"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6F2F3EE3-1B8C-42EC-BB3D-0840D8881734}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ServiceCenterID"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="8">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{62FDC00E-6A33-410E-A327-5613114E5B12}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ThruDate"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="8">9/01/2007</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+      DTS:DTSID="{1E7EA0D8-9C6F-4B9D-83C1-04128DC12E39}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="varSSISOps_243D8D20B47745B69E572E201A9FBE65_RowCount_1">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+      DTS:DTSID="{9F9B8023-0967-4B26-9E44-9746B5F99AD3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="varSSISOps_243D8D20B47745B69E572E201A9FBE65_RowCount_2">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:Description="SSISOps : DON'T CHANGE PREFIX. This variable (introduced in v3.2) controls execution of all event handlers for BIxPress Auditing Framework. Set this variable to True or -1 if you want to disable auditing framework related code inside all eventhandlers. You may also have to set Package.LoggingMode=2 along with this variable if you want to disable framework completely."
+      DTS:DTSID="{E7766BCD-A267-4CB0-990F-604D9E532B6D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="varSSISOps_DisableBIxAuditing">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,22,PipelineInitialization,18,OnPipelineRowsSent,24,OnPipelinePrePrimeOutput,25,OnPipelinePostPrimeOutput,24,OnPipelinePreEndOfRowset,25,OnPipelinePostEndOfRowset</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostPrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePreEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePrePrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelineRowsSent"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="PipelineInitialization"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CreateXLSTables"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="CreateXLSTables"
+      DTS:DTSID="{E81AD14D-0121-453A-84CC-FDACD90DFA9E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CreateXLSTables"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5C972E02-5EC9-488C-B36D-58697AAB1A6C}"
+          SQLTask:SqlStatementSource="CREATE TABLE `EnhancedCashReceipts` (&#xA;&#x9;`BankName` VARCHAR(60),&#xA;&#x9;`BankAccountID` long,&#xA;&#x9;`profitCenterID` VARCHAR(10),&#xA;&#x9;`BatchNo` long,&#xA;&#x9;`ConsolidatedInvoiceID` long,&#xA;&#x9;`ConsolidatedInvoiceDate` VARCHAR(10),&#xA;&#x9;`InvoiceOrDebitMemoID` long,&#xA;&#x9;`InvoiceDate` DATETIME,&#xA;&#x9;`AuthID` long,&#xA;&#x9;`CashReceiptID` long,&#xA;&#x9;`AccountingDate` DateTime,&#xA;&#x9;`CashReceiptApplicationALDate` DateTime,&#xA;&#x9;`TransfereeFName` VARCHAR(50),&#xA;&#x9;`TransfereeLName` VARCHAR(50),&#xA;&#x9;`ClientID` long,&#xA;&#x9;`ClientName` VARCHAR(100),&#xA;&#x9;`RcvdFromCode` VARCHAR(4),&#xA;&#x9;`RcvdFromID` long,&#xA;&#x9;`FromName` VARCHAR(72),&#xA;&#x9;`AuthLoanType` VARCHAR(10),&#xA;&#x9;`AuthLoanNumber` long,&#xA;&#x9;`ProgramID` VARCHAR(10),&#xA;&#x9;`CashReceiptApplicationAmount` MONEY,&#xA;&#x9;`TypeID` VARCHAR(4),&#xA;&#x9;`CheckAmount` MONEY,&#xA;&#x9;`BillingTypeID` VARCHAR(10),&#xA;&#x9;`UnappliedAmount` MONEY,&#xA;&#x9;`LoanBalance` MONEY,&#xA;&#x9;`Status` VARCHAR(10))&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Dynamic Properties Task"
+      DTS:CreationName="Microsoft.ScriptTask"
+      DTS:Description="Dynamic Properties Task"
+      DTS:DTSID="{9001E129-2C50-4CEF-98AD-2F21A6802807}"
+      DTS:ExecutableType="Microsoft.ScriptTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dynamic Properties Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ScriptTask_10536222b75d487f8f2ac112618f8c94"
+          VSTAMajorVersion="3"
+          VSTAMinorVersion="0"
+          Language="VisualBasic">
+          <ProjectItem
+            Name="ScriptMain.vb"
+            Encoding="UTF8"><![CDATA[ Option Strict Off
+ Imports System
+ Imports System.Data
+ Imports System.Math
+ Imports Microsoft.SqlServer.Dts.Runtime
+ <Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute> _
+<System.CLSCompliantAttribute(False)> _
+Partial Public Class ScriptMain
+	Inherits Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+
+	Enum ScriptResults
+		Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success
+		Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+	End Enum
+      Declare Unicode Function WritePrivateProfileString Lib "kernel32" Alias "WritePrivateProfileStringW" (ByVal lpApplicationName As String, ByVal lpKeyName As String, ByVal lpString As String, ByVal lpFileName As String) As Int32
+      Declare Unicode Function GetPrivateProfileString Lib "kernel32" Alias "GetPrivateProfileStringW" (ByVal lpApplicationName As String, ByVal lpKeyName As String, ByVal lpDefault As String, ByVal lpReturnedString As String, ByVal nSize As Int32, ByVal lpFileName As String) As Int32
+      Public Sub Main()
+          'TODO: Add code below
+      Dim oValue As Object
+      Dim oConnMgr As ConnectionManager
+      Dim oRuntimeVal As Object
+        '///////////////////////////////////////////////////
+        ' 'Connections';'Microsoft OLE DB Provider for SQL Server';'Properties';'Catalog'
+        '///////////////////////////////////////////////////
+        '//Commenting out to set it from ConnectionManager
+        'Try
+        '     oValue = GetValue(0, "C:\DTSINI\GlobalDTS.ini", "DB Connection", "CatalogName", "", oRuntimeVal, "", "", oRuntimeVal, "", "")
+        '     If Not oValue Is Nothing Then
+        '         oConnMgr = DTS.Connections("OLEDB_WINTRACDEV_09072011_1")
+        '         oConnMgr.Properties("InitialCatalog").SetValue(oConnMgr, oValue)
+        '         'MessageBox.Show(oValue)
+
+        '     End If
+
+        ' Catch ex As Exception
+        '    Throw ex'//Can not set this property
+        'End Try
+
+        '///////////////////////////////////////////////////
+        ' 'Connections';'Microsoft OLE DB Provider for SQL Server';'Properties';'DataSource'
+        '///////////////////////////////////////////////////
+
+        '//Commenting out to set it from ConnectionManager
+        ' Try
+        '    oValue = GetValue(0, "C:\DTSINI\GlobalDTS.ini", "DB Connection", "ServerName", "",oRuntimeVal,"","",oRuntimeVal,"","")
+        'If Not oValue Is Nothing Then
+        '        oConnMgr = DTS.Connections("OLEDB_WINTRACDEV_09072011_1")
+        '        oConnMgr.Properties("ServerName").SetValue(oConnMgr, oValue)
+        '    End If
+        'Catch ex As Exception
+        '    Throw ex'//Can not set this property
+        'End Try
+
+        '///////////////////////////////////////////////////
+        ' 'Global Variables';'OutputFileRootDirectory';'Properties';'Value'
+        '///////////////////////////////////////////////////
+        oValue = GetValue(0, "C:\DTSINI\GlobalDTS.ini", "Output File", "DefaultFileLocation", "",oRuntimeVal,"","",oRuntimeVal,"","")
+       If Not oValue Is Nothing Then
+           WriteVariable("OutputFileRootDirectory", CType(oValue,String))
+       End If
+
+        'MessageBox.Show("Before SetFilePath")
+        SetFilePath()
+
+        'MessageBox.Show("End Main")
+
+        Dts.TaskResult = ScriptResults.Success
+      End Sub
+
+      Public Function INIRead(ByVal INIPath As String, ByVal SectionName As String, ByVal KeyName As String, ByVal DefaultValue As String) As String
+          ' primary version of call gets single value given all parameters
+          Dim n As Int32
+          Dim sData As String
+          sData = Space$(1024) ' allocate some room 
+          n = GetPrivateProfileString(SectionName, KeyName, DefaultValue, _
+          sData, sData.Length, INIPath)
+          If n > 0 Then ' return whatever it gave us
+              INIRead = sData.Substring(0, n)
+          Else
+              INIRead = ""
+          End If
+      End Function
+      Public Function INIRead(ByVal INIPath As String, ByVal SectionName As String, ByVal KeyName As String) As String
+          Return INIRead(INIPath, SectionName, KeyName, "")
+      End Function
+      Public Function INIRead(ByVal INIPath As String, ByVal SectionName As String) As String
+          Return INIRead(INIPath, SectionName, Nothing, "")
+      End Function
+      Public Function INIRead(ByVal INIPath As String) As String
+          Return INIRead(INIPath, Nothing, Nothing, "")
+      End Function
+  Public Function GetValue(ByVal SourceType As Integer, _
+     ByVal IniFileFileName As String, _
+     ByVal IniFileSection As String, _
+     ByVal IniFileKey As String, _
+     ByVal QueryConnectionName As String, _
+     ByVal QuerySQL As String, _
+     ByVal GlobalVariable As String, _
+     ByVal EnvironmentVariable As String, _
+     ByVal ConstantValue As String, _
+     ByVal DataFileFileName As String, Optional sQueryConnPassword as String="") As String
+ 
+         Select Case SourceType
+             Case 0 '//INI
+                 Return INIRead(IniFileFileName, IniFileSection, IniFileKey)
+             Case 4 '//Constant
+                 Return ConstantValue
+             Case 5 '//Data File
+                 Return ReadTextFile(DataFileFileName)
+             Case 3 '//Env Variable
+                 Return Environment.GetEnvironmentVariable(EnvironmentVariable)
+             Case 2 '//Variable
+                 Return ReadVariable(GlobalVariable).ToString
+             Case 1 '//Query
+                 Return GetDBValue(QueryConnectionName, QuerySQL, sQueryConnPassword).ToString
+         End Select
+     End Function
+     Function GetDBValue(ByVal sConnectionName As String, ByVal sSQL As String,Optional sQueryConnPassword as String="") As Object
+         Dim oConnMgr As ConnectionManager
+         Dim oConn As IDbConnection
+         Dim oCmd As IDbCommand
+         '//The following line will not work with SQL Server RTM - version 9.00.1399. You must apply SP1 or Higher 
+         Dim oCmdParam As Wrapper.IDTSConnectionManagerDatabaseParameters100
+         'Dim oCmdParam As Object
+         Try
+             oConnMgr = Dts.Connections(sConnectionName)
+             If oConnMgr.CreationName = "OLEDB" Then
+                 oCmdParam = CType(oConnMgr.InnerObject, Wrapper.IDTSConnectionManagerDatabaseParameters100)
+                 'oCmdParam = oConnMgr.InnerObject
+                 oConn = CType(oCmdParam.GetConnectionForSchema(), OleDb.OleDbConnection)
+                 oCmd = oConn.CreateCommand()
+                 oCmd.CommandText = sSQL
+                 oCmd.CommandType = CommandType.Text
+                 Return oCmd.ExecuteScalar()
+             ElseIf oConnMgr.CreationName = "ODBC" Then
+                  If String.IsNullOrEmpty(sQueryConnPassword) Then
+                      oConn = New Odbc.OdbcConnection(oConnMgr.ConnectionString)
+                  Else
+                      oConn = New Odbc.OdbcConnection("Password=" & sQueryConnPassword & ";" & oConnMgr.ConnectionString)
+                  End If
+                 oConn.Open()
+                 oCmd = New Odbc.OdbcCommand(sSQL, oConn)
+                 Return oCmd.ExecuteScalar()
+             End If
+         Catch ex As Exception
+             Throw ex
+         Finally
+             oConn.Close()
+         End Try
+     End Function
+     Function ReadTextFile(ByVal filename As String) As String
+         Dim sr As New System.IO.StreamReader(filename)
+         ReadTextFile = sr.ReadToEnd()
+         sr.Close()
+     End Function
+    Private Sub WriteVariable(ByVal variableName As String, ByVal variableValue As Object)
+        Dim vars As Variables = Nothing
+        Dim isUnlocked As Boolean = False
+
+        Try
+            DTS.VariableDispenser.LockForWrite(variableName)
+            DTS.VariableDispenser.GetVariables(vars)
+
+            Try
+                vars(variableName).Value = variableValue
+            Catch ex As Exception
+                Throw
+            Finally
+                If vars IsNot Nothing Then
+                    vars.Unlock()
+                    isUnlocked = True
+                End If
+            End Try
+        Catch ex As Exception
+            DTS.VariableDispenser.Reset()
+
+            Throw
+        Finally
+            If vars IsNot Nothing AndAlso Not isUnlocked Then
+                vars.Unlock()
+            End If
+        End Try
+    End Sub
+
+    Private Function ReadVariable(ByVal variableName As String) As Object
+        Dim vars As Variables = Nothing
+        Dim isUnlocked As Boolean = False
+        Dim result As Object
+
+        Try
+            Dts.VariableDispenser.LockForRead(variableName)
+            Dts.VariableDispenser.GetVariables(vars)
+
+            Try
+                result = vars(variableName).Value
+            Catch ex As Exception
+                Throw
+            Finally
+                If vars IsNot Nothing Then
+                    vars.Unlock()
+                    isUnlocked = True
+                End If
+            End Try
+        Catch ex As Exception
+            Dts.VariableDispenser.Reset()
+
+            Throw
+        Finally
+            If vars IsNot Nothing AndAlso Not isUnlocked Then
+                vars.Unlock()
+            End If
+        End Try
+
+        Return result
+    End Function
+
+    Private Function SetFilePath() As Object
+        Dim sToday
+        Dim strMM
+        Dim strDD
+        Dim strYY
+        Dim strMMDDYY
+        Dim strOutputFileRootDirectory
+        Dim strOutputReportDirectory
+        Dim strGDTSFilePath
+        Dim oConnMgr As ConnectionManager
+
+        sToday = Now
+
+        strMM = DatePart("m", sToday)
+        If Len(strMM) = 1 Then
+            strMM = "0" & strMM
+        End If
+
+        strDD = DatePart("d", sToday)
+        If Len(strDD) = 1 Then
+            strDD = "0" & strDD
+        End If
+
+        strYY = DatePart("yyyy", sToday)
+
+        strMMDDYY = strMM & "-" & strDD & "-" & strYY
+
+
+        WriteVariable("GDTSYesterday", strMMDDYY)
+        'MessageBox.Show(strMMDDYY)
+
+        strOutputFileRootDirectory = ReadVariable("OutputFileRootDirectory")
+        strOutputReportDirectory = "Reports\R1017\"
+        strGDTSFilePath = strOutputFileRootDirectory &
+            strOutputReportDirectory &
+            "R1017-" &
+            strMMDDYY & "-" &
+            ReadVariable("ExecutionUserParam") &
+            ".xls"
+        'MessageBox.Show(strGDTSFilePath)
+        'MessageBox.Show(ReadVariable("RestrictionNTUserID"))
+        'MessageBox.Show(ReadVariable("ExecutionUserParam"))
+        WriteVariable("GDTSFilePath", strGDTSFilePath)
+
+
+        Try
+            If Not My.Computer.FileSystem.DirectoryExists(strOutputFileRootDirectory & strOutputReportDirectory) Then
+                My.Computer.FileSystem.CreateDirectory(strOutputFileRootDirectory & strOutputReportDirectory)
+                'MessageBox.Show("Create Dir")
+            End If
+            'MessageBox.Show("Before check fileexists")
+
+            If My.Computer.FileSystem.FileExists(strGDTSFilePath) Then
+                My.Computer.FileSystem.DeleteFile(strGDTSFilePath)
+                'MessageBox.Show("DeleteFile")
+            End If
+
+            oConnMgr = Dts.Connections("Excel-WINTRAC")
+            oConnMgr.Properties("ServerName").SetValue(oConnMgr, strGDTSFilePath)
+
+        Catch ex As Exception
+            'MessageBox.Show(ex.Message)
+            Throw ex
+        End Try
+
+
+        'MessageBox.Show("End SetFilePath")
+
+        Return True
+
+    End Function
+
+    Private Function SetXLSConnectionFilePath() As Object
+        Dim oValue As Object
+        Dim oConnMgr As ConnectionManager
+        Dim oRuntimeVal As Object
+        '///////////////////////////////////////////////////
+        ' 'Connections';'Microsoft Excel 97-2000';'Properties';'DataSource'
+        '///////////////////////////////////////////////////
+        Try
+            oValue = GetValue(2, "", "", "", "", oRuntimeVal, "GDTSFilePath", "", oRuntimeVal, "", "")
+            If Not oValue Is Nothing Then
+                oConnMgr = Dts.Connections("OLEDB_R1017-09-19-2011-TEST_XLS_1")
+                oConnMgr.Properties("ServerName").SetValue(oConnMgr, oValue)
+            End If
+        Catch ex As Exception
+            Throw ex '//Can not set this property
+        End Try
+
+    End Function
+End Class]]></ProjectItem>
+          <ProjectItem
+            Name="ScriptTask_10536222b75d487f8f2ac112618f8c94.vbproj"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{955481d8-03f2-413c-84c5-a43ce7474197}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>My Project</AppDesignerFolder>
+    <RootNamespace>ScriptTask_10536222b75d487f8f2ac112618f8c94</RootNamespace>
+    <AssemblyName>ScriptTask_10536222b75d487f8f2ac112618f8c94</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>On</OptionStrict>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=12.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=12.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="My Project\" />
+  </ItemGroup>
+  <!-- Include the build rules for a VB project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="ScriptTask" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
+        <Host Name="ScriptTask" IconIndex=""></Host>
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST120</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <ItemGroup>
+    <Compile Include="ScriptMain.vb" />
+  </ItemGroup>
+</Project>]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:Language>msBuild</msb:Language>
+		<msb:CodeName>ScriptTask_10536222b75d487f8f2ac112618f8c94</msb:CodeName>
+		<msb:DisplayName>ScriptTask_10536222b75d487f8f2ac112618f8c94</msb:DisplayName>
+		<msb:ProjectId>{CB04327C-7E1D-4B61-9428-DC7FBEF5CFDB}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="ScriptTask_10536222b75d487f8f2ac112618f8c94.vbproj"/>
+		<msb:File Include="ScriptMain.vb"/>
+	</msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+          <BinaryItem
+            Name="ScriptTask_10536222b75d487f8f2ac112618f8c94.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAH/IKl0AAAAAAAAAAOAAIiALAVAAACYAAAAGAAAAAAAAlkQA
+AAAgAAAAYAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACgAAAAAgAAAAAAAAMAQIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAEREAABPAAAAAGAAADADAAAAAAAAAAAAAAAAAAAA
+AAAAAIAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAnCQAAAAgAAAAJgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAADADAAAAYAAAAAQAAAAoAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAIAAAAACAAAALAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAB4
+RAAAAAAAAEgAAAACAAUA7CcAAFgcAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKA8AAAoqHgIoEAAACiqmcxEAAAqAAQAABHMSAAAKgAIA
+AARzEwAACoADAAAEcxQAAAqABAAABCoufgEAAARvFQAACioufgIAAARvFgAACioufgMAAARvFwAA
+CioufgQAAARvGAAACioeAigZAAAKKgAAEzAMAGQAAAABAAARAhZyAQAAcHIxAABwckkAAHBycQAA
+cAcoGgAACnJxAABwcnEAAHAHKBoAAApycQAAcHJxAABwKBAAAAYKBiwRAnJzAABwBigaAAAKKBMA
+AAYCKBUAAAYmAigbAAAKFm8cAAAKKhMwBgA4AAAAAgAAESAABAAAKB0AAAoMDwIPAw8EEgIIbx4A
+AAoPASgKAAAGCwcWMQsIFgdvHwAACgorBnJxAABwCgYqPgIDBAVycQAAcCgMAAAGKj4CAwQUcnEA
+AHAoDAAABio+AgMUFHJxAABwKAwAAAYqEzAEAG0AAAADAAARAwsHRQYAAAACAAAAOQAAACkAAAAf
+AAAADwAAABQAAAArSQIEBQ4EKA0AAAYKKzwOCQorNwIOCigSAAAGCissDggoIAAACgorIgIOBygU
+AAAGbyEAAAoKKxICDgUOBg4LKBEAAAZvIQAACgoGKgAAABswBADIAAAABAAAEQIoGwAACm8iAAAK
+A28jAAAKCwdvJAAACnKjAABwFiglAAAKLTIHbyYAAAp0JQAAAW8nAAAKdCYAAAEMCG8oAAAKJQRv
+KQAACiUXbyoAAApvKwAACgrebwdvJAAACnKvAABwFiglAAAKLUoFKCwAAAosDgdvLQAACnMuAAAK
+DCsccrkAAHAFcs0AAHAHby0AAAooLwAACnMuAAAKDAhvMAAACgQIdCkAAAFzMQAACm8rAAAKCt4Q
+JSgyAAAKDQl6CG8zAAAK3AYqARwAAAAAAAC2tgAJGwAAAQIAAAC/vwAHAAAAABMwAgAUAAAABQAA
+EQNzNAAACiVvNQAACgpvNgAACgYqGzACAHsAAAAGAAARFAoWCwIoGwAACm83AAAKA284AAAKAigb
+AAAKbzcAAAoSAG85AAAKBgNvOgAACgQoOwAACm88AAAK3gklKDIAAAoM/hreDAYsCAZvPQAAChcL
+3N4mJSgyAAAKDQIoGwAACm83AAAKbz4AAAr+GgYsCQctBgZvPQAACtwqAAE0AAAAACcAFDsACRsA
+AAECACcAH0YADAAAAAAAAAQAUFQAGRsAAAECAAQAaW0ADQAAAAAbMAIAfQAAAAcAABEUChYLAigb
+AAAKbzcAAAoDbz8AAAoCKBsAAApvNwAAChIAbzkAAAoGA286AAAKb0AAAAooOwAACgzeCSUoMgAA
+Cg3+Gt4MBiwIBm89AAAKFwvc3iclKDIAAAoTBAIoGwAACm83AAAKbz4AAAr+GgYsCQctBgZvPQAA
+CtwIKgAAAAE0AAAAACcAFDsACRsAAAECACcAH0YADAAAAAAAAAQAUFQAGhsAAAECAAQAam4ADQAA
+AAAbMAQA2wEAAAgAABEoQQAACowxAAABCnLRAABwBig7AAAKFxcoQgAACow0AAABCwcoOwAACihD
+AAAKFzMMctUAAHAHKEQAAAoLctkAAHAGKDsAAAoXFyhCAAAKjDQAAAEMCCg7AAAKKEMAAAoXMwxy
+1QAAcAgoRAAACgxy3QAAcAYoOwAAChcXKEIAAAqMNAAAAQ0HcucAAHAoRAAACggoRAAACnLnAABw
+KEQAAAoJKEQAAAoTBAJy6wAAcBEEKDsAAAooEwAABgJycwAAcCgUAAAGKDsAAAoTBXIHAQBwEwYR
+BREGKEQAAApyJQEAcChEAAAKEQQoRAAACnLnAABwKEQAAAoCcjMBAHAoFAAABihEAAAKclkBAHAo
+RAAAChMHAnJjAQBwEQcoOwAACigTAAAGKAQAAAZvRQAAChEFEQYoRAAACigaAAAKb0YAAAotHSgE
+AAAGb0UAAAoRBREGKEQAAAooGgAACm9HAAAKKAQAAAZvRQAAChEHKBoAAApvSAAACiwWKAQAAAZv
+RQAAChEHKBoAAApvSQAACgIoGwAACm8iAAAKcn0BAHBvIwAAChMIEQhvSgAACnKZAQBwb0sAAAoR
+CBEHKDsAAApvTAAACt4LJSgyAAAKEwkRCXoXjDkAAAEqAAEQAAAAACcBoskBCxsAAAEbMAwAgAAA
+AAkAABECGHJxAABwcnEAAHBycQAAcHJxAABwCSgaAAAKcmMBAHBycQAAcAkoGgAACnJxAABwcnEA
+AHAoEAAABgsHLDICKBsAAApvIgAACnKvAQBwbyMAAAoMCG9KAAAKcpkBAHBvSwAACggHKDsAAApv
+TAAACt4LJSgyAAAKEwQRBHoGKgEQAAAAAAAAc3MACxsAAAE2AgMoOwAACihNAAAKKh4CKE4AAAoq
+LtAGAAACKE8AAAoqHgIoIQAACioAABMwAQAUAAAACgAAEQKMBQAAGy0IKAEAACsKKwICCgYqIgP+
+FQUAABsqHgIoUQAACioAAAATMAIAKAAAAAsAABECe1IAAApvUwAACgoGjAgAABstEigCAAArCgJ7
+UgAACgZvVAAACgYqSgIoUQAACgJzVQAACn1SAAAKKgBCU0pCAQABAAAAAAAMAAAAdjQuMC4zMDMx
+OQAAAAAFAGwAAACoCQAAI34AABQKAABsDAAAI1N0cmluZ3MAAAAAgBYAAPQBAAAjVVMAdBgAABAA
+AAAjR1VJRAAAAIQYAADUAwAAI0Jsb2IAAAAAAAAAAgAAAVc9oh0JDgAAAPoBMwAWAAABAAAAOwAA
+AAgAAAAIAAAAHwAAACkAAABVAAAABAAAACoAAAAJAAAACwAAAAIAAAAFAAAABQAAAAEAAAAIAAAA
+AgAAAAEAAAAHAAAAAwAAAAMAAAACAAAAAABeBwEAAAAAAAYA8AR2CgYASAV2CgYAMwS3CQ8AtwoA
+AAYApATVBQoAHAQKCQoA5QNIBwoARwRIBw4AzwMGCg4AhwnKCQYAvQS3CQ4AdARPCg4AjASRAQYA
+jwufBw4ATgkGCg4A1QSRAQYApgOfBwYAYAQwCg4ALAAMBwoABwS8BxIAJgXjBgYAEAWfBxIAswPj
+BgYAcQafBxYA+AhoAxoAEQhNAQYAPgifBxYA5gpoAwYApgefBw4A/wpPChIANgfjBg4A8AqRAQYA
+YAafBwYAvwufBxYADwtoAw4AKgtPCh4AAQAiCRoAHwhlARoAxQFNARoAjANNARoALwiAARoA0AGA
+AQ4AWQFPCgYAiwioABYAVwloAxYAbwJoAwYAGwt2Cg4AUwORAQYAXwOfBw4AtQaRAQ4AbQiRAQYA
+XwCfBw4AdgnKCQ4AWgyWChYA1QpoAxYATgxoAwYAqwefBwYAeAKfBwYAoAmfBwAAAACRAAAAAAAB
+AAEAAAAAAPQH9gslAAEAAQAAAAAAhQn2CykAAQACAAABEACWC/YLOQABAAMAAQAAANkHZQBdAAUA
+CAAFAQAA+AkAADkABQAXAAUBAAA7AAAAOQAFAB4AAgEAAEQLAAB1AAYAIAAxAMEIxQExAJgIzQEx
+AKwI1QExANoI3QEhAOQLgQEGBi4B5QFWgDQL6AFWgKsD6AFQIAAAAAAGGKoJBgABAFggAAAAAAYY
+qgkGAAEAYCAAAAAAERiwCewBAQCKIAAAAAATCGkJ8AEBAJYgAAAAABMI5Af1AQEAoiAAAAAAEwhK
+CfoBAQCuIAAAAAATCOgJ/wEBALogAAAAAAYYqgkGAAEAAAAAAIAAFiAABgQCAQAAAAAAgAAWIBoG
+EAIFAMQgAAAAAAYA3wcGAAsANCEAAAAABgCnAR8CCwB4IQAAAAAGAKcBJwIPAIghAAAAAAYApwEu
+AhIAmCEAAAAABgCnATQCFACoIQAAAAAGAKIFOQIVACQiAAAAAAYAZgVIAiAAFCMAAAAABgCnAjQC
+IwA0IwAAAAABAEQCTwIkAPAjAAAAAAEANwJVAiYAsCQAAAAAAQCXBp4AJwCoJgAAAAABAH4GngAn
+AEQnAAAAAMYC+ApVAScAUicAAAAAxgIrAmkAKABaJwAAAACDAKMDWgIoAGYnAAAAAMYCVQZ9ACgA
+cCcAAAAAEQAbAV8CKACQJwAAAAABAAcBZwIpAJknAAAAAAYYqgkGACoApCcAAAAAAwgSAkoAKgDY
+JwAAAAAGGKoJBgAqAAAgAQDtAgAgAgBAAwAgAwBeBgAgBADiAgAgAQDtAgAgAgBAAwAgAwCmCwAg
+BADvBQAABQDPBQAgBgDiAgAAAQB2BgAAAgAQAwAAAwBCAwAABAC0BQAAAQB2BgAAAgAQAwAAAwBC
+AwAAAQB2BgAAAgAQAwAAAQB2BgAAAQCYAwAAAgDSAgAAAwACCAAABAAlDAAABQAsAwAABgCfAAAA
+BwBSAgAACABkAgAACQDBBQAACgDBAhAQCwDqAQAAAQAcAwAAAgCaABAQAwDqAQAAAQBKAwAAAQC0
+AgAAAgCFBQAAAQC0AgAAAQBICAAAAQAiAgAAAQAiAgkAqgkBABEAqgkGABkAqgkKACkAqgkQADEA
+qgkVAEEAqgkbAFkAqgkGAGEAqgkGAGkAqgkGAIEAqgkhAJEAqgkpAKEAqgkQAKkAqgkGALEAqgkp
+AEkAqgkGAFEAqgkGAAwAqgkGABQAqgkGABwAqgkGACQAqgkGAAwAEgJKABQAEgJKABwAEgJKACQA
+EgJKALkAqgkGAPEAVQZUALkAPAtZAPkAsAsBAAEB/QFkAAkBowZpAAkBZwZtABEBYQJ4AHEAVQZ9
+APkACwuLABkBjgeRAMkA/wJ9ACEBMgaXAMkAhgueACkBNgGeANEA3AGiADkB1AsQADkBiAOoADkB
+fQieAAkBQAyvAMkAQAZ9AEkBqgkQAAkBbQu0ANEAtwcGAFEBqgm8AFkBkAnEANEA3wMGAGEBqgkQ
+AGEBuwF9AGEB3wMGAPkAUwnYAGkB+gMQAGkB4wreAOEAjgflAHkBkwXsAHEBewXxAOEArgYGAGkB
+oAsGAGkBrwEQAHEBcQWeAIEB7gsQAYEBywsWAQEBswciASEBdAsnAakBlwctAbEBXQszAbEBMAwQ
+ALEBUgszAbEBnAIQAMkAxgo4AbkBjgc+AcEBqwVFAXEA+ApVAXEAKwJpAIkAigJaAdkBAwJqAXEA
+qgkGADQA5AuBATwAcQVKADwAewWYATwAqgkGAAgAHAC5AQgAIAC+AQ4AfQAAAA4AiQAAACkAYwCL
+Ay4ACwCIAi4AEwCRAi4AGwCwAi4AIwC5AkAAOwC+AUAAMwABA0MAKwAKA0MAMwABA0kAYwCcA2MA
+KwAKA2MAMwABA2kAYwCwA4AAOwC+AYMAQwC+AYMASwC+AYMAKwAKA4kAYwC9A6AAOwC+AaMAawC+
+AaMAcwAjA8AAOwC+AcMAMwABA8MAUwApA+AAOwC+AeMAMwABA+MAWwAjA+ACMwABA+ACOwC+AQAD
+MwABAwADOwC+ASADMwABAyADOwC+AUADMwABA0ADOwC+AWADOwC+AYADOwC+AaADOwC+AaADMwAB
+A8ADOwC+AeADOwC+AeADMwABAwMAwwEFAMMBBwDDAQkAwwELAMMBDQDDAQ8AwwERAMMBFQDDAU8A
+XgBzAIEAygDOAPYAAQFLAWIBdQEEAAEABwAFAAAAhwlvAgAA9gd0AgAATgl5AgAA+gl+AgAAFgKD
+AgIABAADAAIABQAFAAIABgAHAAIABwAJAAIAHgALAFYALgA1ADwAQwBnAXoBiQGQAUUBEwDTAAEA
+RQEVAO4AAQAEgAAAAAAAAAAAAAAAAAAAAABlAAAABAAAAAAAAAAAAAAAngF3AQAAAAAEAAAAAAAA
+AAAAAACeAZ8HAAAAAAoAAAAAAAAAAAAAAKcBkQEAAAAADAAAAAAAAAAAAAAAsAHEBgAAAAAMAAAA
+AAAAAAAAAACwAbIAAAAAAAQAAAAAAAAAAAAAAJ4BTQEAAAAADAAAAAAAAAAAAAAAsAFKCAAAAAAG
+AAQABwAEAAgABQAAABAADgDRAAAAEAA3ANEAAAAAADkA0QChAHABoQCTAQAAAAAASURUU0Nvbm5l
+Y3Rpb25NYW5hZ2VyRGF0YWJhc2VQYXJhbWV0ZXJzMTAwAENvbnRleHRWYWx1ZWAxAFRocmVhZFNh
+ZmVPYmplY3RQcm92aWRlcmAxAGtlcm5lbDMyAEludDMyAFNjcmlwdFRhc2tfMTA1MzYyMjJiNzVk
+NDg3ZjhmMmFjMTEyNjE4ZjhjOTQAPE1vZHVsZT4Ac1NRTABRdWVyeVNRTABTeXN0ZW0uSU8ATWlj
+cm9zb2Z0LlNxbFNlcnZlci5NYW5hZ2VkRFRTAFQAV3JpdGVQcml2YXRlUHJvZmlsZVN0cmluZ1cA
+R2V0UHJpdmF0ZVByb2ZpbGVTdHJpbmdXAERpc3Bvc2VfX0luc3RhbmNlX18AQ3JlYXRlX19JbnN0
+YW5jZV9fAHZhbHVlX18AR2V0Q29ubmVjdGlvbkZvclNjaGVtYQBTeXN0ZW0uRGF0YQBQcm9qZWN0
+RGF0YQBTeXN0ZW0uRGF0YS5PbGVEYgBtc2NvcmxpYgBTeXN0ZW0uRGF0YS5PZGJjAE1pY3Jvc29m
+dC5WaXN1YWxCYXNpYwBJTklSZWFkAExvY2tGb3JSZWFkAFJlYWRUb0VuZABJRGJDb21tYW5kAE9k
+YmNDb21tYW5kAENyZWF0ZUNvbW1hbmQAc1F1ZXJ5Q29ublBhc3N3b3JkAFNwYWNlAENyZWF0ZUlu
+c3RhbmNlAGdldF9HZXRJbnN0YW5jZQBpbnN0YW5jZQBHZXRIYXNoQ29kZQBSZWFkVmFyaWFibGUA
+V3JpdGVWYXJpYWJsZQBHbG9iYWxWYXJpYWJsZQBHZXRFbnZpcm9ubWVudFZhcmlhYmxlAFJ1bnRp
+bWVUeXBlSGFuZGxlAEdldFR5cGVGcm9tSGFuZGxlAERlbGV0ZUZpbGUAUmVhZFRleHRGaWxlAHZh
+cmlhYmxlTmFtZQBEYXRhRmlsZUZpbGVOYW1lAEluaUZpbGVGaWxlTmFtZQBscEZpbGVOYW1lAGxw
+QXBwbGljYXRpb25OYW1lAGdldF9DcmVhdGlvbk5hbWUAU2VjdGlvbk5hbWUAc0Nvbm5lY3Rpb25O
+YW1lAFF1ZXJ5Q29ubmVjdGlvbk5hbWUAbHBLZXlOYW1lAGZpbGVuYW1lAERhdGVBbmRUaW1lAERh
+dGVUaW1lAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlJ1bnRpbWUAc2V0X0NvbW1hbmRUeXBlAFNv
+dXJjZVR5cGUAR2V0VHlwZQBGYWlsdXJlAFZTVEFSVFNjcmlwdE9iamVjdE1vZGVsQmFzZQBBcHBs
+aWNhdGlvbkJhc2UAQ2xvc2UARWRpdG9yQnJvd3NhYmxlU3RhdGUATG9ja0ZvcldyaXRlAEhlbHBL
+ZXl3b3JkQXR0cmlidXRlAEdlbmVyYXRlZENvZGVBdHRyaWJ1dGUARGVidWdnYWJsZUF0dHJpYnV0
+ZQBFZGl0b3JCcm93c2FibGVBdHRyaWJ1dGUAQ29tVmlzaWJsZUF0dHJpYnV0ZQBTdGFuZGFyZE1v
+ZHVsZUF0dHJpYnV0ZQBIaWRlTW9kdWxlTmFtZUF0dHJpYnV0ZQBUYXJnZXRGcmFtZXdvcmtBdHRy
+aWJ1dGUARGVidWdnZXJIaWRkZW5BdHRyaWJ1dGUATXlHcm91cENvbGxlY3Rpb25BdHRyaWJ1dGUA
+Q29tcGlsYXRpb25SZWxheGF0aW9uc0F0dHJpYnV0ZQBDTFNDb21wbGlhbnRBdHRyaWJ1dGUAU1NJ
+U1NjcmlwdFRhc2tFbnRyeVBvaW50QXR0cmlidXRlAFJ1bnRpbWVDb21wYXRpYmlsaXR5QXR0cmli
+dXRlAEdldERCVmFsdWUAZ2V0X1ZhbHVlAHNldF9WYWx1ZQB2YXJpYWJsZVZhbHVlAEdldE9iamVj
+dFZhbHVlAEdldFZhbHVlAFNldFZhbHVlAERlZmF1bHRWYWx1ZQBDb25zdGFudFZhbHVlAG5TaXpl
+AFN5c3RlbS5SdW50aW1lLlZlcnNpb25pbmcAbHBSZXR1cm5lZFN0cmluZwBXcml0ZVByaXZhdGVQ
+cm9maWxlU3RyaW5nAEdldFByaXZhdGVQcm9maWxlU3RyaW5nAENvbXBhcmVTdHJpbmcAZ2V0X0Nv
+bm5lY3Rpb25TdHJpbmcAVG9TdHJpbmcAbHBTdHJpbmcAU3Vic3RyaW5nAE1hdGgASU5JUGF0aABT
+ZXRYTFNDb25uZWN0aW9uRmlsZVBhdGgAU2V0RmlsZVBhdGgAZ2V0X0xlbmd0aABVbmxvY2sARmly
+c3REYXlPZldlZWsATWljcm9zb2Z0LlNxbFNlcnZlci5TY3JpcHRUYXNrAE1pY3Jvc29mdC5TcWxT
+ZXJ2ZXIuRHRzLlRhc2tzLlNjcmlwdFRhc2sATWljcm9zb2Z0LlZpc3VhbEJhc2ljLk15U2Vydmlj
+ZXMuSW50ZXJuYWwAU2NyaXB0T2JqZWN0TW9kZWwAU3lzdGVtLkNvbXBvbmVudE1vZGVsAFNjcmlw
+dFRhc2tfMTA1MzYyMjJiNzVkNDg3ZjhmMmFjMTEyNjE4ZjhjOTQuZGxsAGdldF9JdGVtAGdldF9G
+aWxlU3lzdGVtAEVudW0AQm9vbGVhbgBMZW4AT3BlbgBTeXN0ZW0uQ29tcG9uZW50TW9kZWwuRGVz
+aWduAFNjcmlwdE1haW4AZ2V0X0FwcGxpY2F0aW9uAE15QXBwbGljYXRpb24ASW5pRmlsZVNlY3Rp
+b24ASURiQ29ubmVjdGlvbgBPbGVEYkNvbm5lY3Rpb24AT2RiY0Nvbm5lY3Rpb24ARXhjZXB0aW9u
+AG8ATWljcm9zb2Z0LlNxbFNlcnZlci5EVFNSdW50aW1lV3JhcABGaXJzdFdlZWtPZlllYXIARXhl
+Y3V0ZVNjYWxhcgBTdHJlYW1SZWFkZXIAbV9BcHBPYmplY3RQcm92aWRlcgBtX1VzZXJPYmplY3RQ
+cm92aWRlcgBtX0NvbXB1dGVyT2JqZWN0UHJvdmlkZXIAbV9NeVdlYlNlcnZpY2VzT2JqZWN0UHJv
+dmlkZXIAQ29ubmVjdGlvbk1hbmFnZXIAU3lzdGVtLkNvZGVEb20uQ29tcGlsZXIATWljcm9zb2Z0
+LlNxbFNlcnZlci5EdHMuUnVudGltZS5XcmFwcGVyAGdldF9Vc2VyAGdldF9WYXJpYWJsZURpc3Bl
+bnNlcgBnZXRfQ29tcHV0ZXIAU2VydmVyQ29tcHV0ZXIATXlDb21wdXRlcgBTZXRQcm9qZWN0RXJy
+b3IAQWN0aXZhdG9yAC5jdG9yAC5jY3RvcgBTeXN0ZW0uRGlhZ25vc3RpY3MATWljcm9zb2Z0LlZp
+c3VhbEJhc2ljLkRldmljZXMAZ2V0X1dlYlNlcnZpY2VzAE15V2ViU2VydmljZXMATWljcm9zb2Z0
+LlZpc3VhbEJhc2ljLkFwcGxpY2F0aW9uU2VydmljZXMAU3lzdGVtLlJ1bnRpbWUuSW50ZXJvcFNl
+cnZpY2VzAE1pY3Jvc29mdC5WaXN1YWxCYXNpYy5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SdW50
+aW1lLkNvbXBpbGVyU2VydmljZXMATWljcm9zb2Z0LlZpc3VhbEJhc2ljLk15U2VydmljZXMARGVi
+dWdnaW5nTW9kZXMAZ2V0X1Byb3BlcnRpZXMARHRzUHJvcGVydGllcwBHZXRWYXJpYWJsZXMAU3Ry
+aW5ncwBFcXVhbHMAQ29udmVyc2lvbnMAZ2V0X0Nvbm5lY3Rpb25zAFJ1bnRpbWVIZWxwZXJzAE9w
+ZXJhdG9ycwBTdWNjZXNzAGdldF9EdHMAU2NyaXB0UmVzdWx0cwBGaWxlRXhpc3RzAERpcmVjdG9y
+eUV4aXN0cwBDb25jYXQAQ29uY2F0ZW5hdGVPYmplY3QAZ2V0X0lubmVyT2JqZWN0AE15UHJvamVj
+dABSZXNldABscERlZmF1bHQAc2V0X1Rhc2tSZXN1bHQARW52aXJvbm1lbnQARGF0ZVBhcnQAc2V0
+X0NvbW1hbmRUZXh0AG1fQ29udGV4dABnZXRfTm93AFNjcmlwdFRhc2tfMTA1MzYyMjJiNzVkNDg3
+ZjhmMmFjMTEyNjE4ZjhjOTQuTXkASW5pRmlsZUtleQBDcmVhdGVEaXJlY3RvcnkASXNOdWxsT3JF
+bXB0eQBEdHNQcm9wZXJ0eQBGaWxlU3lzdGVtUHJveHkAAAAAL0MAOgBcAEQAVABTAEkATgBJAFwA
+RwBsAG8AYgBhAGwARABUAFMALgBpAG4AaQAAF08AdQB0AHAAdQB0ACAARgBpAGwAZQAAJ0QAZQBm
+AGEAdQBsAHQARgBpAGwAZQBMAG8AYwBhAHQAaQBvAG4AAAEAL08AdQB0AHAAdQB0AEYAaQBsAGUA
+UgBvAG8AdABEAGkAcgBlAGMAdABvAHIAeQAAC08ATABFAEQAQgAACU8ARABCAEMAABNQAGEAcwBz
+AHcAbwByAGQAPQAAAzsAAANtAAADMAAAA2QAAAl5AHkAeQB5AAADLQABG0cARABUAFMAWQBlAHMA
+dABlAHIAZABhAHkAAB1SAGUAcABvAHIAdABzAFwAUgAxADAAMQA3AFwAAA1SADEAMAAxADcALQAB
+JUUAeABlAGMAdQB0AGkAbwBuAFUAcwBlAHIAUABhAHIAYQBtAAAJLgB4AGwAcwAAGUcARABUAFMA
+RgBpAGwAZQBQAGEAdABoAAAbRQB4AGMAZQBsAC0AVwBJAE4AVABSAEEAQwABFVMAZQByAHYAZQBy
+AE4AYQBtAGUAAENPAEwARQBEAEIAXwBSADEAMAAxADcALQAwADkALQAxADkALQAyADAAMQAxAC0A
+VABFAFMAVABfAFgATABTAF8AMQABAI3BJGbUv9tMse3J786FepYABCABAQgDIAABBSABARERBCAB
+AQ4FIAIBDg4FIAEBER0HIAQBDg4ODgQgAQECBhUSHAESDAYVEhwBEggGFRIcARI9BhUSHAESGAQg
+ABMABAcCHBwEAAEOHAQgABJ9BQcDDggOBAABDggDIAAIBSACDggIBAcCDggEAAEODgMgAA4JBwQc
+EmUSaRJtBSAAEoCNBSABEmUcBgADCA4OAgMgABwFIAASgJ0GIAEBEYChBAABAg4HAAQODg4ODgcg
+AgEOEoClBQABARJtAwcBDgkHBBJxAhJtEm0FIAASgLUGIAEBEBJxBiABEoC5HAQAARwcBCABARwK
+BwUScQIcEm0SbQ4HChwcHBwcHBwcEmUSbQUAABGAxQsABAgOHBGAyRGAzQQAAQgcBQACHBwcBSAA
+EoDZBCABAg4FIAASgN0GIAESgOEcBSACARwcCQcFHBwSZRwSbQQgAQIcBwABEkURgOkEBwEeAAIe
+AAUQAQAeAAQKAR4ABAcBEwAGFRIcARMABwYVEk0BEwAGFRJNARMAAhMABAoBEwAFIAEBEwAIt3pc
+Vhk04IkIsD9ffxHVCjoIiYRdzYCAzJEEAAAAAAQBAAAAASIHBhUSHAESDAcGFRIcARIIBwYVEhwB
+Ej0HBhUSHAESGAIGCAMGESADAAABBAAAEgwEAAASCAQAABI9BAAAEhgLAAQIEA4QDhAOEA4OAAYI
+EA4QDhAOEA4IEA4HIAQODg4ODgYgAw4ODg4FIAIODg4EIAEODg4gCw4IDg4ODg4ODg4ODgYgAxwO
+Dg4FIAIBDhwEIAEcDgQgABJFBxABAR4AHgAHMAEBARAeAAQIABIMBAgAEggECAASPQQIABIYBCgA
+EwAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJvd3MBCAEAAgAAAAAARwEAGi5O
+RVRGcmFtZXdvcmssVmVyc2lvbj12NC4wAQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRAuTkVUIEZy
+YW1ld29yayA0CAEAAQAAAAAAGAEACk15VGVtcGxhdGUIMTEuMC4wLjAAAAUBAAAAAGEBADRTeXN0
+ZW0uV2ViLlNlcnZpY2VzLlByb3RvY29scy5Tb2FwSHR0cENsaWVudFByb3RvY29sEkNyZWF0ZV9f
+SW5zdGFuY2VfXxNEaXNwb3NlX19JbnN0YW5jZV9fAAAAEAEAC015LkNvbXB1dGVyAAATAQAOTXku
+QXBwbGljYXRpb24AAAwBAAdNeS5Vc2VyAAATAQAOTXkuV2ViU2VydmljZXMAAAAAAGxEAAAAAAAA
+AAAAAIZEAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4RAAAAAAAAAAAAAAAAF9Db3JEbGxNYWlu
+AG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAQAAAA
+GAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAASAAAAFhgAADU
+AgAAAAAAAAAAAADUAjQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAAAAAAvQTv/gAA
+AQAAAAAAAAAAAAAAAAAAAAAAPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQAAAABAFYAYQBy
+AEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBuAAAAAAAAALAE
+NAIAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAEAIAAAEAMAAwADAAMAAwADQAYgAw
+AAAALAACAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAAACAAAAAwAAgAAQBGAGkA
+bABlAFYAZQByAHMAaQBvAG4AAAAAADAALgAwAC4AMAAuADAAAACAADAAAQBJAG4AdABlAHIAbgBh
+AGwATgBhAG0AZQAAAFMAYwByAGkAcAB0AFQAYQBzAGsAXwAxADAANQAzADYAMgAyADIAYgA3ADUA
+ZAA0ADgANwBmADgAZgAyAGEAYwAxADEAMgA2ADEAOABmADgAYwA5ADQALgBkAGwAbAAAACgAAgAB
+AEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAACAAAACIADAAAQBPAHIAaQBnAGkAbgBhAGwA
+RgBpAGwAZQBuAGEAbQBlAAAAUwBjAHIAaQBwAHQAVABhAHMAawBfADEAMAA1ADMANgAyADIAMgBi
+ADcANQBkADQAOAA3AGYAOABmADIAYQBjADEAMQAyADYAMQA4AGYAOABjADkANAAuAGQAbABsAAAA
+NAAIAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAAMAAuADAALgAwAC4AMAAAADgACAAB
+AEEAcwBzAGUAbQBiAGwAeQAgAFYAZQByAHMAaQBvAG4AAAAwAC4AMAAuADAALgAwAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAADAAAAJg0AAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
+        </ScriptProject>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Transform Data Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Transform Data Task"
+      DTS:DTSID="{243D8D20-B477-45B6-9E57-2E201A9FBE65}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transform Data Task">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Transform Data Task\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Transform Data Task\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Inputs[Data Conversion Input].Columns[BankName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="60"
+                      cachedName="BankName"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankName]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Inputs[Data Conversion Input].Columns[profitCenterID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="profitCenterID"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[profitCenterID]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Inputs[Data Conversion Input].Columns[TransfereeFName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TransfereeFName"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[TransfereeFName]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Inputs[Data Conversion Input].Columns[TransfereeLName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TransfereeLName"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[TransfereeLName]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Inputs[Data Conversion Input].Columns[ClientName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="ClientName"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ClientName]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Inputs[Data Conversion Input].Columns[RcvdFromCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="RcvdFromCode"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[RcvdFromCode]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Inputs[Data Conversion Input].Columns[FromName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="72"
+                      cachedName="FromName"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[FromName]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Inputs[Data Conversion Input].Columns[AuthLoanType]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="AuthLoanType"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[AuthLoanType]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Inputs[Data Conversion Input].Columns[ProgramID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="ProgramID"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProgramID]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Inputs[Data Conversion Input].Columns[TypeID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="TypeID"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[TypeID]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Inputs[Data Conversion Input].Columns[BillingTypeID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="BillingTypeID"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BillingTypeID]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Inputs[Data Conversion Input].Columns[Status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="Status"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Status]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Inputs[Data Conversion Input].Columns[AccountingDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="23"
+                      cachedName="AccountingDate"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountingDate]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Inputs[Data Conversion Input].Columns[CashReceiptApplicationALDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="23"
+                      cachedName="CashReceiptApplicationALDate"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CashReceiptApplicationALDate]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Inputs[Data Conversion Input].Columns[ConsolidatedInvoiceDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ConsolidatedInvoiceDate"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ConsolidatedInvoiceDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Transform Data Task\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[BankName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[BankName]"
+                      name="BankName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankName]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[profitCenterID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[profitCenterID]"
+                      name="profitCenterID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[profitCenterID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[TransfereeFName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[TransfereeFName]"
+                      name="TransfereeFName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[TransfereeFName]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[TransfereeLName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[TransfereeLName]"
+                      name="TransfereeLName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[TransfereeLName]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[ClientName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[ClientName]"
+                      name="ClientName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ClientName]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[RcvdFromCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[RcvdFromCode]"
+                      name="RcvdFromCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[RcvdFromCode]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[FromName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[FromName]"
+                      name="FromName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[FromName]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[AuthLoanType]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[AuthLoanType]"
+                      name="AuthLoanType"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[AuthLoanType]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[ProgramID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[ProgramID]"
+                      name="ProgramID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProgramID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[TypeID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[TypeID]"
+                      name="TypeID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[TypeID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[BillingTypeID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[BillingTypeID]"
+                      name="BillingTypeID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BillingTypeID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[Status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[Status]"
+                      name="Status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Status]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[AccountingDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="23"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[AccountingDate]"
+                      name="AccountingDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountingDate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[CashReceiptApplicationALDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="23"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[CashReceiptApplicationALDate]"
+                      name="CashReceiptApplicationALDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CashReceiptApplicationALDate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[ConsolidatedInvoiceDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[ConsolidatedInvoiceDate]"
+                      name="ConsolidatedInvoiceDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ConsolidatedInvoiceDate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Transform Data Task\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transform Data Task\DEST OLE DB Destination"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="SSISOps : DON'T CHANGE PREFIX. "
+              name="DEST OLE DB Destination">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::varSSISOps_243D8D20B47745B69E572E201A9FBE65_RowCount_2</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Transform Data Task\DEST OLE DB Destination.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transform Data Task\DEST OLE DB Destination.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Transform Data Task\DEST OLE DB Destination.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transform Data Task\Excel Destination"
+              componentClassID="Microsoft.ExcelDestination"
+              contactInfo="Excel Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Excel Destination"
+              name="Excel Destination"
+              usesDispositions="true">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">EnhancedCashReceipts</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Transform Data Task\Excel Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel-WINTRAC]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel-WINTRAC]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Excel Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[BankAccountID]"
+                      cachedDataType="i4"
+                      cachedName="BankAccountID"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[BankAccountID]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankAccountID]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[BatchNo]"
+                      cachedDataType="i4"
+                      cachedName="BatchNo"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[BatchNo]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BatchNo]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[ConsolidatedInvoiceID]"
+                      cachedDataType="i4"
+                      cachedName="ConsolidatedInvoiceID"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[ConsolidatedInvoiceID]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ConsolidatedInvoiceID]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[InvoiceDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="InvoiceDate"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[InvoiceDate]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[InvoiceDate]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[AuthID]"
+                      cachedDataType="i4"
+                      cachedName="AuthID"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[AuthID]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[AuthID]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[CashReceiptID]"
+                      cachedDataType="i4"
+                      cachedName="CashReceiptID"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[CashReceiptID]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CashReceiptID]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[ClientID]"
+                      cachedDataType="i4"
+                      cachedName="ClientID"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[ClientID]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ClientID]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[RcvdFromID]"
+                      cachedDataType="i4"
+                      cachedName="RcvdFromID"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[RcvdFromID]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[RcvdFromID]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[AuthLoanNumber]"
+                      cachedDataType="i4"
+                      cachedName="AuthLoanNumber"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[AuthLoanNumber]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[AuthLoanNumber]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[CashReceiptApplicationAmount]"
+                      cachedDataType="cy"
+                      cachedName="CashReceiptApplicationAmount"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[CashReceiptApplicationAmount]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CashReceiptApplicationAmount]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[CheckAmount]"
+                      cachedDataType="cy"
+                      cachedName="CheckAmount"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[CheckAmount]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CheckAmount]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[UnappliedAmount]"
+                      cachedDataType="cy"
+                      cachedName="UnappliedAmount"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[UnappliedAmount]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnappliedAmount]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[LoanBalance]"
+                      cachedDataType="cy"
+                      cachedName="LoanBalance"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[LoanBalance]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LoanBalance]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[InvoiceOrDebitMemoID]"
+                      cachedDataType="i4"
+                      cachedName="InvoiceOrDebitMemoID"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[InvoiceOrDebitMemoID]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[InvoiceOrDebitMemoID]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[BankName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="BankName"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[BankName]"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[BankName]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[profitCenterID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="profitCenterID"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[profitCenterID]"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[profitCenterID]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[TransfereeFName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TransfereeFName"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[TransfereeFName]"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[TransfereeFName]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[TransfereeLName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TransfereeLName"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[TransfereeLName]"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[TransfereeLName]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[ClientName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ClientName"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[ClientName]"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[ClientName]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[FromName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="FromName"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[FromName]"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[FromName]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[AuthLoanType]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="AuthLoanType"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[AuthLoanType]"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[AuthLoanType]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[ProgramID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ProgramID"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[ProgramID]"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[ProgramID]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[RcvdFromCode]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RcvdFromCode"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[RcvdFromCode]"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[RcvdFromCode]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[TypeID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TypeID"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[TypeID]"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[TypeID]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[BillingTypeID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="BillingTypeID"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[BillingTypeID]"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[BillingTypeID]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[Status]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Status"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Status]"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[Status]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[AccountingDate]"
+                      cachedDataType="wstr"
+                      cachedLength="23"
+                      cachedName="AccountingDate"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[AccountingDate]"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[AccountingDate]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[CashReceiptApplicationALDate]"
+                      cachedDataType="wstr"
+                      cachedLength="23"
+                      cachedName="CashReceiptApplicationALDate"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[CashReceiptApplicationALDate]"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[CashReceiptApplicationALDate]" />
+                    <inputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].Columns[ConsolidatedInvoiceDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="ConsolidatedInvoiceDate"
+                      externalMetadataColumnId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[ConsolidatedInvoiceDate]"
+                      lineageId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output].Columns[ConsolidatedInvoiceDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[BankName]"
+                      dataType="wstr"
+                      length="255"
+                      name="BankName" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[BankAccountID]"
+                      dataType="r8"
+                      name="BankAccountID" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[profitCenterID]"
+                      dataType="wstr"
+                      length="255"
+                      name="profitCenterID" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[BatchNo]"
+                      dataType="r8"
+                      name="BatchNo" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[ConsolidatedInvoiceID]"
+                      dataType="r8"
+                      name="ConsolidatedInvoiceID" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[ConsolidatedInvoiceDate]"
+                      dataType="wstr"
+                      length="255"
+                      name="ConsolidatedInvoiceDate" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[InvoiceOrDebitMemoID]"
+                      dataType="r8"
+                      name="InvoiceOrDebitMemoID" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[InvoiceDate]"
+                      dataType="date"
+                      name="InvoiceDate" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[AuthID]"
+                      dataType="r8"
+                      name="AuthID" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[CashReceiptID]"
+                      dataType="r8"
+                      name="CashReceiptID" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[AccountingDate]"
+                      dataType="date"
+                      name="AccountingDate" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[CashReceiptApplicationALDate]"
+                      dataType="date"
+                      name="CashReceiptApplicationALDate" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[TransfereeFName]"
+                      dataType="wstr"
+                      length="255"
+                      name="TransfereeFName" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[TransfereeLName]"
+                      dataType="wstr"
+                      length="255"
+                      name="TransfereeLName" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[ClientID]"
+                      dataType="r8"
+                      name="ClientID" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[ClientName]"
+                      dataType="wstr"
+                      length="255"
+                      name="ClientName" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[RcvdFromCode]"
+                      dataType="wstr"
+                      length="255"
+                      name="RcvdFromCode" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[RcvdFromID]"
+                      dataType="r8"
+                      name="RcvdFromID" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[FromName]"
+                      dataType="wstr"
+                      length="255"
+                      name="FromName" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[AuthLoanType]"
+                      dataType="wstr"
+                      length="255"
+                      name="AuthLoanType" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[AuthLoanNumber]"
+                      dataType="r8"
+                      name="AuthLoanNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[ProgramID]"
+                      dataType="wstr"
+                      length="255"
+                      name="ProgramID" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[CashReceiptApplicationAmount]"
+                      dataType="cy"
+                      name="CashReceiptApplicationAmount" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[TypeID]"
+                      dataType="wstr"
+                      length="255"
+                      name="TypeID" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[CheckAmount]"
+                      dataType="cy"
+                      name="CheckAmount" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[BillingTypeID]"
+                      dataType="wstr"
+                      length="255"
+                      name="BillingTypeID" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[UnappliedAmount]"
+                      dataType="cy"
+                      name="UnappliedAmount" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[LoanBalance]"
+                      dataType="cy"
+                      name="LoanBalance" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Status]"
+                      dataType="wstr"
+                      length="255"
+                      name="Status" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transform Data Task\Excel Destination.Outputs[Excel Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Excel Destination Error Output"
+                  synchronousInputId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data Task\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data Task\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transform Data Task\NULL Handling"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="This transformation will convert any blank text value coming from source system to NULL to prevent any possible data loading issue due to mismatch of data types (i.e. Text -&gt; Numeric or Text -&gt; Date Time etc.)."
+              name="NULL Handling"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Transform Data Task\NULL Handling.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transform Data Task\NULL Handling.Inputs[Derived Column Input].Columns[AccountingDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="23"
+                      cachedName="AccountingDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountingDate]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountingDate]}) == "" ? (DT_STR,23,1252)NULL(DT_STR,23,1252) : #{Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountingDate]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(AccountingDate) == "" ? (DT_STR,23,1252)NULL(DT_STR,23,1252) : AccountingDate</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data Task\NULL Handling.Inputs[Derived Column Input].Columns[CashReceiptApplicationALDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="23"
+                      cachedName="CashReceiptApplicationALDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CashReceiptApplicationALDate]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CashReceiptApplicationALDate]}) == "" ? (DT_STR,23,1252)NULL(DT_STR,23,1252) : #{Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CashReceiptApplicationALDate]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(CashReceiptApplicationALDate) == "" ? (DT_STR,23,1252)NULL(DT_STR,23,1252) : CashReceiptApplicationALDate</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transform Data Task\NULL Handling.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Transform Data Task\NULL Handling.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transform Data Task\NULL Handling.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Transform Data Task\NULL Handling.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transform Data Task\NULL Handling.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data Task\NULL Handling.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\NULL Handling.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data Task\NULL Handling.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transform Data Task\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">EXEC RetrieveClientRestrictedData @NTUserID=?, @StoredProcedureName='rp_R1017', @Parameters=?
+WITH RESULT SETS
+(
+     (
+	BankName varchar(60) ,
+	BankAccountID int,
+	profitCenterID VARCHAR(10),
+	BatchNo int,
+	ConsolidatedInvoiceID INT,
+	ConsolidatedInvoiceDate  VARCHAR(10),
+	InvoiceOrDebitMemoID INT,
+	InvoiceDate DATETIME,
+	AuthID int,
+	CashReceiptID int,
+	AccountingDate VARCHAR(23),
+	CashReceiptApplicationALDate  VARCHAR(23),
+	TransfereeFName VARCHAR(50),
+	TransfereeLName VARCHAR(50),
+	ClientID int,
+	ClientName VARCHAR(100),
+	RcvdFromCode varchar(4),
+	RcvdFromID int,
+	FromName varchar(72),
+	AuthLoanType varchar(10),
+	AuthLoanNumber INT,
+	ProgramID VARCHAR(4),
+	CashReceiptApplicationAmount MONEY,
+	TypeID varchar(4),
+	CheckAmount money ,
+	BillingTypeID VARCHAR(10),
+	UnappliedAmount money ,
+	LoanBalance MONEY,
+	Status varchar(4) 
+
+    )
+);</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable">User::RestrictionParameters</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"@NTUserID:Input",{1695BD39-7A7E-4ACF-8760-A3C880D2F379};"@Parameters:Input",{F2D8F392-392C-4068-8F57-C8C82DD7082C};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Transform Data Task\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{DFE97949-F600-440C-85CC-9C55270D29B8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SQLDB-WINTRAC]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BankName]"
+                      length="60"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankName]"
+                      name="BankName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankAccountID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BankAccountID]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankAccountID]"
+                      name="BankAccountID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[profitCenterID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[profitCenterID]"
+                      length="10"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[profitCenterID]"
+                      name="profitCenterID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BatchNo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BatchNo]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BatchNo]"
+                      name="BatchNo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ConsolidatedInvoiceID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ConsolidatedInvoiceID]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ConsolidatedInvoiceID]"
+                      name="ConsolidatedInvoiceID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ConsolidatedInvoiceDate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ConsolidatedInvoiceDate]"
+                      length="50"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ConsolidatedInvoiceDate]"
+                      name="ConsolidatedInvoiceDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[InvoiceDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[InvoiceDate]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[InvoiceDate]"
+                      name="InvoiceDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[AuthID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AuthID]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[AuthID]"
+                      name="AuthID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CashReceiptID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CashReceiptID]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CashReceiptID]"
+                      name="CashReceiptID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountingDate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AccountingDate]"
+                      length="23"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountingDate]"
+                      name="AccountingDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CashReceiptApplicationALDate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CashReceiptApplicationALDate]"
+                      length="23"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CashReceiptApplicationALDate]"
+                      name="CashReceiptApplicationALDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[TransfereeFName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TransfereeFName]"
+                      length="50"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[TransfereeFName]"
+                      name="TransfereeFName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[TransfereeLName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TransfereeLName]"
+                      length="50"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[TransfereeLName]"
+                      name="TransfereeLName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ClientID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ClientID]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ClientID]"
+                      name="ClientID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ClientName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ClientName]"
+                      length="100"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ClientName]"
+                      name="ClientName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[RcvdFromCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RcvdFromCode]"
+                      length="4"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[RcvdFromCode]"
+                      name="RcvdFromCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[RcvdFromID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RcvdFromID]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[RcvdFromID]"
+                      name="RcvdFromID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[FromName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FromName]"
+                      length="72"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[FromName]"
+                      name="FromName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[AuthLoanType]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AuthLoanType]"
+                      length="10"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[AuthLoanType]"
+                      name="AuthLoanType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[AuthLoanNumber]"
+                      dataType="i4"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AuthLoanNumber]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[AuthLoanNumber]"
+                      name="AuthLoanNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProgramID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProgramID]"
+                      length="4"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProgramID]"
+                      name="ProgramID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CashReceiptApplicationAmount]"
+                      dataType="cy"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CashReceiptApplicationAmount]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CashReceiptApplicationAmount]"
+                      name="CashReceiptApplicationAmount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[TypeID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TypeID]"
+                      length="4"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[TypeID]"
+                      name="TypeID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CheckAmount]"
+                      dataType="cy"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CheckAmount]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CheckAmount]"
+                      name="CheckAmount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BillingTypeID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BillingTypeID]"
+                      length="10"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BillingTypeID]"
+                      name="BillingTypeID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnappliedAmount]"
+                      dataType="cy"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UnappliedAmount]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnappliedAmount]"
+                      name="UnappliedAmount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LoanBalance]"
+                      dataType="cy"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LoanBalance]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LoanBalance]"
+                      name="LoanBalance"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Status]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="ErrorOrTruncationOperationConversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Status]"
+                      length="4"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Status]"
+                      name="Status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[InvoiceOrDebitMemoID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[InvoiceOrDebitMemoID]"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[InvoiceOrDebitMemoID]"
+                      name="InvoiceOrDebitMemoID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BankName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      name="BankName" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BankAccountID]"
+                      dataType="i4"
+                      name="BankAccountID" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[profitCenterID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="profitCenterID" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BatchNo]"
+                      dataType="i4"
+                      name="BatchNo" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ConsolidatedInvoiceID]"
+                      dataType="i4"
+                      name="ConsolidatedInvoiceID" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ConsolidatedInvoiceDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ConsolidatedInvoiceDate" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[InvoiceDate]"
+                      dataType="dbTimeStamp"
+                      name="InvoiceDate" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AuthID]"
+                      dataType="i4"
+                      name="AuthID" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CashReceiptID]"
+                      dataType="i4"
+                      name="CashReceiptID" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AccountingDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="23"
+                      name="AccountingDate" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CashReceiptApplicationALDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="23"
+                      name="CashReceiptApplicationALDate" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TransfereeFName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TransfereeFName" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TransfereeLName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TransfereeLName" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ClientID]"
+                      dataType="i4"
+                      name="ClientID" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ClientName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="ClientName" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RcvdFromCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="RcvdFromCode" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RcvdFromID]"
+                      dataType="i4"
+                      name="RcvdFromID" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FromName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="72"
+                      name="FromName" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AuthLoanType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="AuthLoanType" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AuthLoanNumber]"
+                      dataType="i4"
+                      name="AuthLoanNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProgramID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="ProgramID" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CashReceiptApplicationAmount]"
+                      dataType="cy"
+                      name="CashReceiptApplicationAmount" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TypeID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="TypeID" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CheckAmount]"
+                      dataType="cy"
+                      name="CheckAmount" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BillingTypeID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="BillingTypeID" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UnappliedAmount]"
+                      dataType="cy"
+                      name="UnappliedAmount" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LoanBalance]"
+                      dataType="cy"
+                      name="LoanBalance" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="Status" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[InvoiceOrDebitMemoID]"
+                      dataType="i4"
+                      name="InvoiceOrDebitMemoID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BankName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BankName]"
+                      name="BankName" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BankAccountID]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BankAccountID]"
+                      name="BankAccountID" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[profitCenterID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[profitCenterID]"
+                      name="profitCenterID" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BatchNo]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BatchNo]"
+                      name="BatchNo" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ConsolidatedInvoiceID]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ConsolidatedInvoiceID]"
+                      name="ConsolidatedInvoiceID" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ConsolidatedInvoiceDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ConsolidatedInvoiceDate]"
+                      name="ConsolidatedInvoiceDate" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[InvoiceOrDebitMemoID]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[InvoiceOrDebitMemoID]"
+                      name="InvoiceOrDebitMemoID" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[InvoiceDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[InvoiceDate]"
+                      name="InvoiceDate" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AuthID]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AuthID]"
+                      name="AuthID" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CashReceiptID]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CashReceiptID]"
+                      name="CashReceiptID" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AccountingDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="23"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AccountingDate]"
+                      name="AccountingDate" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CashReceiptApplicationALDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="23"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CashReceiptApplicationALDate]"
+                      name="CashReceiptApplicationALDate" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TransfereeFName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TransfereeFName]"
+                      name="TransfereeFName" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TransfereeLName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TransfereeLName]"
+                      name="TransfereeLName" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ClientID]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ClientID]"
+                      name="ClientID" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ClientName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ClientName]"
+                      name="ClientName" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RcvdFromCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RcvdFromCode]"
+                      name="RcvdFromCode" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RcvdFromID]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RcvdFromID]"
+                      name="RcvdFromID" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FromName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="72"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FromName]"
+                      name="FromName" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AuthLoanType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AuthLoanType]"
+                      name="AuthLoanType" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AuthLoanNumber]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AuthLoanNumber]"
+                      name="AuthLoanNumber" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProgramID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProgramID]"
+                      name="ProgramID" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CashReceiptApplicationAmount]"
+                      dataType="cy"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CashReceiptApplicationAmount]"
+                      name="CashReceiptApplicationAmount" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TypeID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TypeID]"
+                      name="TypeID" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CheckAmount]"
+                      dataType="cy"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CheckAmount]"
+                      name="CheckAmount" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BillingTypeID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BillingTypeID]"
+                      name="BillingTypeID" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UnappliedAmount]"
+                      dataType="cy"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UnappliedAmount]"
+                      name="UnappliedAmount" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LoanBalance]"
+                      dataType="cy"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LoanBalance]"
+                      name="LoanBalance" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Status]"
+                      name="Status" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transform Data Task\SRC OLE DB Source"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="SSISOps : DON'T CHANGE PREFIX. "
+              name="SRC OLE DB Source">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::varSSISOps_243D8D20B47745B69E572E201A9FBE65_RowCount_1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Transform Data Task\SRC OLE DB Source.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transform Data Task\SRC OLE DB Source.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Transform Data Task\SRC OLE DB Source.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Transform Data Task.Paths[Data Conversion Output]"
+              endId="Package\Transform Data Task\DEST OLE DB Destination.Inputs[Row Count Input 1]"
+              name="Data Conversion Output"
+              startId="Package\Transform Data Task\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Transform Data Task.Paths[Derived Column Output]"
+              endId="Package\Transform Data Task\Data Conversion.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\Transform Data Task\NULL Handling.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Transform Data Task.Paths[OLE DB Source Output]"
+              endId="Package\Transform Data Task\SRC OLE DB Source.Inputs[Row Count Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\Transform Data Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Transform Data Task.Paths[Row Count Output 1]"
+              endId="Package\Transform Data Task\NULL Handling.Inputs[Derived Column Input]"
+              name="Row Count Output 1"
+              startId="Package\Transform Data Task\SRC OLE DB Source.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Transform Data Task.Paths[Row Count Output 11]"
+              endId="Package\Transform Data Task\Excel Destination.Inputs[Excel Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\Transform Data Task\DEST OLE DB Destination.Outputs[Row Count Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{05EB0DFC-01FE-4C95-A688-22F6C58557E9}"
+      DTS:From="Package\Dynamic Properties Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\CreateXLSTables" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{AAB2C905-9FBF-4AC7-BBED-2F250764AC4F}"
+      DTS:From="Package\CreateXLSTables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Transform Data Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+      DTS:DTSID="{5FE0D773-F032-4B85-BCFA-576165BDF094}"
+      DTS:EventID="1518771467"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{C446C487-3E6D-4742-8262-910946D1EC39}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\SSISOpsEhObj_Package_OnError"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DisableEventHandlers="True"
+          DTS:DTSID="{4027A45A-2137-4BA9-A52F-3586740E77BF}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SSISOpsEhObj_Package_OnError"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:TransactionOption="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DFE97949-F600-440C-85CC-9C55270D29B8}"
+              SQLTask:SqlStatementSource="exec dbo.usp_SSISOps_Audit_OnAlert @Scope='Package',@EventType='E',@ExecutionID=?,@SourceID=?,@SourceName=?,@SourceType='UNKNOWN',@MessageCode=?,@MessageDescription=?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ErrorCode"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\SSISOpsEhObj_Task_OnError"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DisableEventHandlers="True"
+          DTS:DTSID="{E47009AB-727C-45E3-83CE-B43F7E19A395}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SSISOpsEhObj_Task_OnError"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:TransactionOption="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DFE97949-F600-440C-85CC-9C55270D29B8}"
+              SQLTask:SqlStatementSource="exec dbo.usp_SSISOps_Audit_OnAlert @Scope='Task',@EventType='E',@ExecutionID=?,@SourceID=?,@SourceName=?,@SourceType='UNKNOWN',@MessageCode=?,@MessageDescription=?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ErrorCode"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="166,42"
+          Id="Package\CreateXLSTables"
+          TopLeft="55.5000000000001,86.5" />
+        <NodeLayout
+          Size="256,42"
+          Id="Package\Dynamic Properties Task"
+          TopLeft="5.50000000000003,5.5" />
+        <NodeLayout
+          Size="236,42"
+          Id="Package\Transform Data Task"
+          TopLeft="24.5000000000001,197.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="136,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="140.5,128.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,69"
+              Start="0,0"
+              End="0,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="249,42"
+          Id="Package.EventHandlers[OnError]\SSISOpsEhObj_Package_OnError"
+          TopLeft="325,39" />
+        <NodeLayout
+          Size="230,42"
+          Id="Package.EventHandlers[OnError]\SSISOpsEhObj_Task_OnError"
+          TopLeft="12,65" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Transform Data Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Transform Data Task\Excel Destination"
+          TopLeft="43,399" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Transform Data Task\NULL Handling"
+          TopLeft="40.5,147.5" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Transform Data Task\OLE DB Source"
+          TopLeft="32,5.5" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Transform Data Task\SRC OLE DB Source"
+          TopLeft="22,73.5" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Transform Data Task\Data Conversion"
+          TopLeft="39,234.5" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Transform Data Task\DEST OLE DB Destination"
+          TopLeft="19.5000000000001,312.5" />
+        <EdgeLayout
+          Id="Package\Transform Data Task.Paths[Row Count Output 11]"
+          TopLeft="124.75,354.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.5"
+              Start="0,0"
+              End="0,37">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform Data Task.Paths[Row Count Output 1]"
+          TopLeft="115.5,115.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform Data Task.Paths[OLE DB Source Output]"
+          TopLeft="112,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26"
+              Start="0,0"
+              End="0,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform Data Task.Paths[Derived Column Output]"
+          TopLeft="118.5,189.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform Data Task.Paths[Data Conversion Output]"
+          TopLeft="122,276.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transform Data Task\Excel Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transform Data Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

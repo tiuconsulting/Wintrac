@@ -1,0 +1,5 @@
+E:\WintrackProject\WintrackWebAPI\DLL\WintrackDAO.dll
+E:\WintrackProject\WintrackWebAPI\DLL\WintrackDAO.pdb
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackDAO\obj\Debug\WintrackDAO.csprojResolveAssemblyReference.cache
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackDAO\obj\Debug\WintrackDAO.dll
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackDAO\obj\Debug\WintrackDAO.pdb

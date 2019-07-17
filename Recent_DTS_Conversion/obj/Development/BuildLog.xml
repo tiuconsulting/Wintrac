@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProjectInfo>
+    <Name>Wintrack_DTS_Conversion</Name>
+    <LastWriteTime>2019-07-17T08:03:03.9622521Z</LastWriteTime>
+    <LastKnownProtectionLevel>EncryptSensitiveWithPassword</LastKnownProtectionLevel>
+    <Salt>zlXqownZ</Salt>
+    <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA0rircerBCUu8CxDPTToRvAAAAAACAAAAAAAQZgAAAAEAACAAAACZUjoOdgIBfA1iT+i76qapUu456R2S0pjCNFjqXiChpAAAAAAOgAAAAAIAACAAAAC+A8mVt9U+ALYQmemcCdWd0n6BuukErTd1yTTzX0FuWzAAAAArk/kzLsbNWPcXlpeoeo1JAQRJefV5fBfWFqYgCQdk/HopZUKkkRBHGiolHeS6MNdAAAAAgzowKA0GMyzN6FWQy/3FvdpcCUCtlMJqB15QQHWmZLJvTaaUUvSo2/TQdrzjwqhxBXc2OIw0kmtNJJ+ILBngag==</LastKnownProtectedHashedPassword>
+  </ProjectInfo>
+  <LastBuildInfos>
+    <ProjectBuildItemInfo>
+      <Name>rp_R1017.dtsx</Name>
+      <LastWriteTime>2019-07-17T08:03:03.1242041Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithPassword</LastKnownProtectionLevel>
+      <Salt>Q+B2qYOz</Salt>
+      <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA0rircerBCUu8CxDPTToRvAAAAAACAAAAAAAQZgAAAAEAACAAAACehX+pX6N1JEu4zAWmY5OOvwxzEywP8IKS3MT4QAPmTAAAAAAOgAAAAAIAACAAAAB9ZEMNz/owxRjqDz9ziWveEiLm0A5gkns1qCGo6Bj3OjAAAACzFW7d+THDbT6jAozAs5mXQq5oz7Ig4iz8BxPXpcYQZCp4kHecl/wuEaLB3ivwfVNAAAAAwiejnhJ1sfdJvBFJetTrqNV5fzkyn08HaEMEq49ErWW9V020h5xY3mx+JlmzYOrP+1fDUy8YTknqQRv58/OGJg==</LastKnownProtectedHashedPassword>
+    </ProjectBuildItemInfo>
+  </LastBuildInfos>
+</BuildLog>

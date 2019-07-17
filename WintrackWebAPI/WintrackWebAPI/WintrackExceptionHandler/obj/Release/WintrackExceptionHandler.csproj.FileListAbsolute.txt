@@ -1,0 +1,16 @@
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackExceptionHandler\bin\Release\WintrackExceptionHandler.dll.config
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackExceptionHandler\bin\Release\WintrackExceptionHandler.dll
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackExceptionHandler\bin\Release\WintrackExceptionHandler.pdb
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackExceptionHandler\bin\Release\Newtonsoft.Json.dll
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackExceptionHandler\bin\Release\System.Net.Http.Formatting.dll
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackExceptionHandler\bin\Release\System.Web.Http.dll
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackExceptionHandler\bin\Release\System.Web.Http.WebHost.dll
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackExceptionHandler\bin\Release\WintrackEntities.dll
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackExceptionHandler\bin\Release\WintrackEntities.pdb
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackExceptionHandler\bin\Release\Newtonsoft.Json.xml
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackExceptionHandler\bin\Release\System.Net.Http.Formatting.xml
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackExceptionHandler\bin\Release\System.Web.Http.xml
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackExceptionHandler\bin\Release\System.Web.Http.WebHost.xml
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackExceptionHandler\obj\Release\WintrackExceptionHandler.csprojResolveAssemblyReference.cache
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackExceptionHandler\obj\Release\WintrackExceptionHandler.dll
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackExceptionHandler\obj\Release\WintrackExceptionHandler.pdb

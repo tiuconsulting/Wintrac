@@ -1,0 +1,10 @@
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackDAO\bin\Release\WintrackDAO.dll
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackDAO\bin\Release\WintrackDAO.pdb
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackDAO\bin\Release\Microsoft.ApplicationBlocks.Data.dll
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackDAO\bin\Release\Newtonsoft.Json.dll
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackDAO\bin\Release\WintrackEntities.dll
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackDAO\bin\Release\Newtonsoft.Json.xml
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackDAO\bin\Release\WintrackEntities.pdb
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackDAO\obj\Release\WintrackDAO.csprojResolveAssemblyReference.cache
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackDAO\obj\Release\WintrackDAO.dll
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackDAO\obj\Release\WintrackDAO.pdb

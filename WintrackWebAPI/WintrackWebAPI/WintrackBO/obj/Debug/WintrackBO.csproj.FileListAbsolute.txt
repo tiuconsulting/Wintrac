@@ -1,0 +1,5 @@
+E:\WintrackProject\WintrackWebAPI\DLL\WintrackBO.dll
+E:\WintrackProject\WintrackWebAPI\DLL\WintrackBO.pdb
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackBO\obj\Debug\WintrackBO.dll
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackBO\obj\Debug\WintrackBO.pdb
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackBO\obj\Debug\WintrackBO.csprojResolveAssemblyReference.cache

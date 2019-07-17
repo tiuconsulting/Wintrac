@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="SQLDB-WINTRAC"
+  DTS:DTSID="{DFE97949-F600-440C-85CC-9C55270D29B8}"
+  DTS:Description="Microsoft OLE DB Provider for SQL Server : "
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=relo-tstsql1.na.awwweb.com;User ID=POC1;Initial Catalog=WintracTestPOC1;Provider=SQLNCLI11.1;Persist Security Info=True;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="Iw/eFgcl5A=="
+        p4:IV="0YFJMd79uh0=" xmlns:p4="www.microsoft.com/SqlServer/SSIS">5Scf/YnL3B1J51RUA0Lhe4HZ2vAbymFnOeVAPFLpmhZcQpclMGAQjA86YLd53XrS162/D15/CUuQgTS0Vx0jVxwdFZ8AzlXMDvZVa++choFkFjnpRFr2WwXsk7LX48mWWs8V8rMXnYPfD96vrMemlbJj/W8oexQD</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

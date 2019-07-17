@@ -1,0 +1,4 @@
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackEntities\bin\Release\WintrackEntities.dll
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackEntities\bin\Release\WintrackEntities.pdb
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackEntities\obj\Release\WintrackEntities.dll
+E:\WintrackProject\WintrackWebAPI\WintrackWebAPI\WintrackEntities\obj\Release\WintrackEntities.pdb
